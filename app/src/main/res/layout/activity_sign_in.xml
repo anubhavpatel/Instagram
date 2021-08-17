@@ -51,7 +51,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/email"
+            android:id="@+id/emailSignIn"
             android:background="@drawable/edit_text_sign_in_bg"
             android:inputType="textEmailAddress"
             android:layout_marginTop="30dp"
@@ -60,7 +60,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password"
+            android:id="@+id/passwordSignIn"
             android:background="@drawable/edit_text_sign_in_bg"
             android:inputType="textPassword"
             android:layout_marginTop="20dp"
@@ -72,7 +72,7 @@
             android:text="Login"
             android:textSize="18sp"
             android:textAllCaps="false"
-            android:id="@+id/btn_login"
+            android:id="@+id/btnLogin"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:drawablePadding="40dp"
