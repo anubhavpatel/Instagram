@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".SignInActivity">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/instagram_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
+<ImageView
+    android:id="@+id/instagram"
+    android:layout_width="200dp"
+    android:layout_height="90dp"
+    android:src="@drawable/instagram"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="170dp"/>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_sign_in"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:layout_below="@+id/instagram"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/login_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:text="Welcome back,"
+            android:textColor="@color/black"
+            android:textSize="36sp"/>
+
+        <TextView
+            android:id="@+id/msg_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="sign in to continue..."
+            android:layout_gravity="left"
+            android:textColor="@color/ColourPrimary"
+            android:textSize="20sp"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:background="@drawable/edit_text_sign_in_bg"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="30dp"
+            android:hint="Email"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/password"
+            android:background="@drawable/edit_text_sign_in_bg"
+            android:inputType="textPassword"
+            android:layout_marginTop="20dp"
+            android:hint="Password"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:id="@+id/btn_login"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:drawablePadding="40dp"
+            android:layout_gravity="left"
+            android:drawableRight="@drawable/ic_arrow"
+            android:background="@drawable/button_bg"
+            android:layout_marginTop="20dp"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Forgot your password?"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="start"
+            android:textStyle="bold"
+            android:id="@+id/forgotPassword"
+            android:textColor="@color/ColourPrimaryDark"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/create_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="create an account ?  "
+        android:textColor="@color/ColourPrimary"
+        android:layout_marginLeft="70dp"
+        android:textSize="20sp"
+        android:layout_below="@id/linear_layout_sign_in"/>
+    <TextView
+        android:id="@+id/signUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:layout_gravity="left"
+        android:textColor="@color/purple"
+        android:textSize="20sp"
+        android:layout_below="@id/linear_layout_sign_in"
+        android:layout_toRightOf="@id/create_account"/>
+</RelativeLayout>

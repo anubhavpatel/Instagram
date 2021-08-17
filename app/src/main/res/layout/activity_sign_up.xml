@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+    <RelativeLayout
+        android:id="@+id/back_to_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/ColourPrimary"/>
+        <ImageView
+            android:id="@+id/backToLoginBtn"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:textSize="22sp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/backToLoginBtn"/>
+    </RelativeLayout>
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/instagram_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/back_to_login"
+        />
+    <LinearLayout
+        android:layout_below="@id/logo"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/register_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:text="Welcome,"
+            android:textColor="@color/black"
+            android:textSize="36sp"/>
+
+        <TextView
+            android:id="@+id/msg_reg_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="register yourself to continue..."
+            android:layout_gravity="left"
+            android:textColor="@color/ColourPrimary"
+            android:textSize="20sp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fullNameSignUp"
+            android:background="@drawable/edit_text_sign_in_bg"
+            android:layout_marginTop="30dp"
+            android:hint="Full name"
+            android:inputType="text"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/usernameSignUp"
+            android:background="@drawable/edit_text_sign_in_bg"
+            android:layout_marginTop="30dp"
+            android:hint="Username"
+            android:inputType="text"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/emailSignUp"
+            android:background="@drawable/edit_text_sign_in_bg"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="20dp"
+            android:hint="Email" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/passwordSignUp"
+            android:background="@drawable/edit_text_sign_in_bg"
+            android:inputType="textPassword"
+            android:layout_marginTop="20dp"
+            android:hint="Password"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Started"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:drawablePadding="40dp"
+            android:textAllCaps="false"
+            android:layout_gravity="left"
+            android:textSize="18sp"
+            android:drawableRight="@drawable/ic_arrow"
+            android:background="@drawable/button_bg"
+            android:layout_marginTop="20dp"
+            android:textColor="#fff"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
