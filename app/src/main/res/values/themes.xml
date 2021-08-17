@@ -7,4 +7,11 @@
         <item name="colorAccent">@color/ColourAccent</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="SplashScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/ColourPrimary</item>
+        <item name="colorPrimaryDark">@color/ColourPrimaryDark</item>
+        <item name="colorAccent">@color/ColourAccent</item>
+        <!-- Customize your theme here. -->
+    </style>
 </resources>
