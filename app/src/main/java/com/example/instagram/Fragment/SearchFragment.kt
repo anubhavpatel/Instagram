@@ -1,11 +1,26 @@
 package com.example.instagram.Fragment
 
+import Adapter.UserAdapter
+import Model.User
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.instagram.R
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+
+
+private val View.input_search_edit_text: Unit
+    get() {}
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,7 +36,11 @@ class SearchFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-
+    private var recyclerView: RecyclerView?= null
+    private var userAdapter: UserAdapter?= null
+    private var mUser: MutableList<User>?= null
+    private var input_search_edit_text : EditText?= null
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,7 +54,53 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_search, container, false)
+        val view= inflater.inflate(R.layout.fragment_search, container, false)
+        recyclerView = view.findViewById(R.id.recycler_view_search)
+        recyclerView?.setHasFixedSize(true)
+        recyclerView?.layoutManager = LinearLayoutManager(context)
+
+        mUser = ArrayList()
+        userAdapter = context?.let { UserAdapter(it, mUser as ArrayList<User>,true) }
+        recyclerView?.adapter = userAdapter
+        input_search_edit_text?.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                TODO("Not yet implemented")
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(input_search_edit_text!!.text.toString() == "")
+                    {}
+                else{
+                    recyclerView?.visibility = View.VISIBLE
+                    retrieveUser()
+                }
+            }
+        })
+        return view
+    }
+
+    private fun retrieveUser() {
+        val usersRef = FirebaseDatabase.getInstance().getReference().child("Users")
+        usersRef.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+           if(input_search_edit_text!!.text.toString() == "")
+           {
+               mUser?.clear()
+              for (snapshot in snapshot.children)
+              {
+                  
+              }
+           }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
     }
 
     companion object {
